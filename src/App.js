@@ -1,27 +1,25 @@
-/*import ClassComponent from "./ClassComponent"
-import ClassComponent2 from "./ClassComponent2"
-function App() {
-  return (
-      <section>
-        <p>hi</p>
-        <h1>hii</h1>
-        <ClassComponent/>
-        <ClassComponent2/>
-        <img src="https://c1.wallpaperflare.com/preview/858/132/992/beautiful-bird-bright-close-up.jpg" alt="" width="25%"/>
-      </section>
-  )
-}
+import {BrowserRouter,Routes,Route} from "react-router-dom"
+import Home from "./Components/Home"
+import About from "./Components/About"
+import Contact from "./Components/Contact"
+import Navbar from "./Components/Navbar"
+import NotFound from "./Components/NotFound"
 
-export default App;
-*/
 
-//import PropsExample from "./PropsExample"
-import Events from "./Events"
 function App(){
   return(
       <div>
-      <Events/>
-        {/*<h1>This is about props examples</h1>
+        <BrowserRouter>
+         <Navbar/>
+          <Routes>
+            <Route path="/" element={<Home/>}/>
+            <Route path="/about" element={<About/>}/>
+            <Route path="/contact" element={<Contact/>}/>
+            <Route path="*" element={<NotFound/>}/>
+          </Routes>
+        </BrowserRouter>
+      {/*<Events/>
+        <h1>This is about props examples</h1>
         <PropsExample name="prasanna" age="20"/>
         <PropsExample name="jahnavi" age="20"/>
         <PropsExample name="reshma" age="20"/>
@@ -30,3 +28,4 @@ function App(){
     )
 }
 export default App
+
